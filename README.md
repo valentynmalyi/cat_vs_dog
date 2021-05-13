@@ -1,9 +1,11 @@
 # cat_vs_dog
 
 train model:
-
+```shell
 python train/run.py
+```
 
 check images:
-
-python train/run.py
+```shell
+python check --path data
+```
