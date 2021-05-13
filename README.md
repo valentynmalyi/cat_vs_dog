@@ -7,5 +7,5 @@ python train/run.py
 
 check images:
 ```shell
-python check --path data
+python check.py --path data
 ```
