@@ -1,11 +1,47 @@
 # cat_vs_dog
 
-train model:
+## Environment setup:
+
+Use Python 3.8
+
+Install required python packages:
+
 ```shell
-python train/run.py
+pip install -r requirements.txt
 ```
 
-check images:
+## Command line scripts:
+
+### Train the model
+
+train model:
+
 ```shell
-python check.py --path data
+python scripts/train.py
+```
+
+### Classify images from the provided directory
+
+check images:
+
+```shell
+python scripts/classify.py -h
+```
+
+Cats and docs recogniser.
+
+    optional arguments:
+        -h, --help   show this help message and exit
+        --path PATH  Path to folder with images in selected folder (default = data)
+
+example:
+
+```shell
+python scripts/classify.py --path data
+```
+
+## Run unit tests
+
+```
+pytest
 ```
