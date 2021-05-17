@@ -20,6 +20,10 @@ train model:
 python scripts/train.py
 ```
 
+my model you can download and put it in `cat_vs_dog/train`
+
+https://drive.google.com/file/d/1CnOEMOsQAOl9eNIAVmpIs0uraIBB5qmj/view?usp=sharing
+
 ### Classify images from the provided directory
 
 check images:
