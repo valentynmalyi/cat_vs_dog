@@ -16,7 +16,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), metrics=['accuracy'])
 
 
-def sava_model():
+def save_model():
     """Save model"""
     train = get_train_data()
     model.fit(train, epochs=settings.epochs)
