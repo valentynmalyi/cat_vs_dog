@@ -15,10 +15,10 @@ class Test(TestCase):
             [0, 0, 0, 1, 0],
             [0, 0, 0, 0, 1],
         ])
-        image = image[tf.newaxis, ..., tf.newaxis]
-        first = np.array([[0.625, 0.], [0., 0.625]], dtype=np.float32)
+        image = image[..., tf.newaxis]
+        first = np.array([[0.625, 0], [0, 0.625]], dtype=np.float32)
         resized_image, _ = utils.resize_image(image, None, 2)
-        second = resized_image[0, ..., 0].numpy()
+        second = resized_image[..., 0].numpy()
         self.assertTrue(np.array_equal(first, second))
 
     def test_normalize_image(self):

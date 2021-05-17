@@ -48,9 +48,9 @@ def get_image_category(img_array, model):
 
 def predict(prediction) -> ImageCategory:
     """Return image category from float"""
-    if prediction <= -3:
+    if prediction <= 0:
         return ImageCategory.cat
-    if prediction >= 3:
+    if prediction >= 1:
         return ImageCategory.dog
     return ImageCategory.unknown
 
