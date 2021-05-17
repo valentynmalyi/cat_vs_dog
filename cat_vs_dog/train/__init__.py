@@ -17,6 +17,7 @@ model.compile(optimizer='adam', loss=tf.keras.losses.BinaryCrossentropy(from_log
 
 
 def sava_model():
+    """Save model"""
     train = get_train_data()
     model.fit(train, epochs=settings.epochs)
     model.save(settings.model_path)
