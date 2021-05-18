@@ -9,12 +9,12 @@ from cat_vs_dog import settings
 from cat_vs_dog.utils import get_image_category, get_img_array_from_file, ImageCategory, is_good_image
 
 parser = argparse.ArgumentParser(description="Cats and docs recogniser.")
-parser.add_argument('--path', help=f"Path to folder with images in folder {settings.base_dir} (default = data)", default="data")
+parser.add_argument('--path', help=f"Path to folder with images in folder {settings.BASE_DIR} (default = data)", default="data")
 
 
 def run(path):
-    model = tf.keras.models.load_model(settings.model_path)
-    path = join(settings.base_dir, path)
+    model = tf.keras.models.load_model(settings.MODEL_PATH)
+    path = join(settings.BASE_DIR, path)
     for file in listdir(path):
         image_category = ImageCategory.unsupported
         file = join(path, file)
@@ -26,6 +26,6 @@ def run(path):
 
 
 if __name__ == '__main__':
-    chdir(settings.base_dir)
+    chdir(settings.BASE_DIR)
     args = parser.parse_args()
     run(path=args.path)

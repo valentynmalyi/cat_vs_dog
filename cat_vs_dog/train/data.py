@@ -17,4 +17,4 @@ def get_train_data():
     train = train.map(resize_image)
     train = train.map(normalize_image)
     train = extend_data(train=train)
-    return train.shuffle(settings.shuffle).batch(settings.batch)
+    return train.SHUFFLE(settings.SHUFFLE).BATCH(settings.BATCH)

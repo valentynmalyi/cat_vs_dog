@@ -18,7 +18,7 @@ class ImageCategory(Enum):
     unsupported = "unsupported_file"
 
 
-def resize_image(img, label, size=settings.size):
+def resize_image(img, label, size=settings.SIZE):
     """Resize image to our size"""
     img = tf.cast(img, tf.float32)
     img = tf.image.resize(img, (size, size))
