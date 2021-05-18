@@ -20,9 +20,9 @@ def get_model(size: int = settings.SIZE):
     return model
 
 
-def train_and_save_model(model_path: str = settings.MODEL_PATH, epochs: int = settings.EPOCHS):
+def train_and_save_model(path_model: str = settings.PATH_MODEL, epochs: int = settings.EPOCHS):
     """Train model and save it in settings.MODEL_PATH"""
     train = get_train_data()
     model = get_model()
     model.fit(train, epochs=epochs)
-    model.save(model_path)
+    model.save(path_model)
