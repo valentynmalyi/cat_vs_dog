@@ -1,4 +1,4 @@
-from cat_vs_dog.train import save_model
+from cat_vs_dog.train import train_and_save_model
 
 if __name__ == '__main__':
-    save_model()
+    train_and_save_model()

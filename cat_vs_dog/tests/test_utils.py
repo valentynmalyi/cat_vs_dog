@@ -27,20 +27,22 @@ class Test(TestCase):
         second, _ = utils.normalize_image(image, None)
         self.assertTrue(np.array_equal(first, second))
 
-    def test_predict(self):
+    def test_is_valid_image(self):
+        self.assertTrue(utils.is_valid_image("1.png"))
+        self.assertTrue(utils.is_valid_image("2.jpg"))
+        self.assertFalse(utils.is_valid_image("3.py"))
+
+
+class ImageCategory(TestCase):
+    def test_get_from_float(self):
         first = utils.ImageCategory.dog
-        second = utils.predict(10)
+        second = utils.ImageCategory.get_from_float(10)
         self.assertEqual(first, second)
 
         first = utils.ImageCategory.cat
-        second = utils.predict(-10)
+        second = utils.ImageCategory.get_from_float(-10)
         self.assertEqual(first, second)
 
         first = utils.ImageCategory.unknown
-        second = utils.predict(0.5)
+        second = utils.ImageCategory.get_from_float(0.5)
         self.assertEqual(first, second)
-
-    def test_is_good_image(self):
-        self.assertTrue(utils.is_good_image("1.png"))
-        self.assertTrue(utils.is_good_image("2.jpg"))
-        self.assertFalse(utils.is_good_image("3.py"))

@@ -20,13 +20,14 @@ train model:
 python scripts/train.py
 ```
 
-my model you can download and put it in `cat_vs_dog/train`
+### Model
+My model you can download and put it in `cat_vs_dog/train`
 
 https://drive.google.com/file/d/1CnOEMOsQAOl9eNIAVmpIs0uraIBB5qmj/view?usp=sharing
 
 ### Classify images from the provided directory
 
-check images:
+Check images:
 
 ```shell
 python scripts/classify.py -h
@@ -38,7 +39,7 @@ Cats and docs recogniser.
         -h, --help   show this help message and exit
         --path PATH  Path to folder with images in selected folder (default = data)
 
-example:
+Example:
 
 ```shell
 python scripts/classify.py --path data

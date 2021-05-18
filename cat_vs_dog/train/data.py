@@ -11,10 +11,10 @@ def download_data():
     return data_set[0]
 
 
-def get_train_data():
+def get_train_data(shuffle: int = settings.SHUFFLE, batch: int = settings.BATCH):
     """Get train data"""
     train = download_data()
     train = train.map(resize_image)
     train = train.map(normalize_image)
     train = extend_data(train=train)
-    return train.SHUFFLE(settings.SHUFFLE).BATCH(settings.BATCH)
+    return train.shuffle(shuffle).batch(batch)
