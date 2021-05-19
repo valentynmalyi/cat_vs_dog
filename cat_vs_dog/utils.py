@@ -55,5 +55,5 @@ def get_img_array_from_file(file: str):
 
 
 def is_valid_image(file: str) -> bool:
-    """Check file end with jpg or png"""
+    """Check file is jpg or png image by its extension"""
     return pathlib.Path(file).suffix in {".jpg", ".png", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi"}

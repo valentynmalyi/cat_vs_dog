@@ -1,10 +1,29 @@
+import argparse
 from os import listdir
 from os.path import isfile, join
 
 import tensorflow as tf
 
+from cat_vs_dog import settings
 from cat_vs_dog.utils import get_img_array_from_file, ImageCategory, is_valid_image
-from cat_vs_dog.parser import parser
+
+
+
+def _get_parser() -> argparse.ArgumentParser:
+    """Get classify parser"""
+    parser = argparse.ArgumentParser(
+        description="Cats and docs recogniser.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        "--path-data", help=f"path to folder with images",
+        default=settings.PATH_DATA
+    )
+    parser.add_argument(
+        "--path-model", help=f"path to folder with model",
+        default=settings.PATH_MODEL
+    )
+    return parser
 
 
 def run(path_data: str, path_model: str):
@@ -20,5 +39,6 @@ def run(path_data: str, path_model: str):
 
 
 if __name__ == "__main__":
-    args = parser.parse_args()
+    classify_parser = _get_parser()
+    args = classify_parser.parse_args()
     run(path_data=args.path_data, path_model=args.path_model)

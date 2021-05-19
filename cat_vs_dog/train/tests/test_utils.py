@@ -23,6 +23,6 @@ class Test(TestCase):
             [0, 2, 0, 0, 0],
             [1, 0, 0, 0, 0],
         ])
-        rotated_image, _ = utils.rot90(image, None)
+        rotated_image, _ = utils._rot90(image, None)
         second = rotated_image[..., 0].numpy()
         self.assertTrue(np.array_equal(first, second))
